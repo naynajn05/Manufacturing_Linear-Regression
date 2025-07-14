@@ -106,7 +106,7 @@ if submitted:
         
     }
  
-   try:
+try:
         #response = requests.post(api_url, json=input_data)
         if response.status_code == 200:
             result = response.json()
