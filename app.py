@@ -107,10 +107,9 @@ if submitted:
     }
  
    try:
-       
-        if response.status_code == 200:
-            result = response.json()
-            st.success(f"✅ Predicted Output: {result['Predicted_Output_Parts_Per_Hour']} parts/hour")
+       if response.status_code == 200:
+        result = response.json()
+        st.success(f"✅ Predicted Output: {result['Predicted_Output_Parts_Per_Hour']} parts/hour")
         else:
             st.error(f"❌ Error: {response.status_code} - {response.json()['detail']}")
     except Exception as e:
