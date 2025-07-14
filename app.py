@@ -86,7 +86,7 @@ with st.form("prediction_form"):
     submitted = st.form_submit_button("Predict Output")
 
 # API URL
-api_url = "http://127.0.0.1:8000/predict"
+#api_url = "http://127.0.0.1:8000/predict"
 
 # Send to FastAPI and display prediction
 if submitted:
@@ -107,12 +107,4 @@ if submitted:
         
     }
  
-    try:
-        response = requests.post(api_url, json=input_data)
-        if response.status_code == 200:
-            result = response.json()
-            st.success(f"✅ Predicted Output: {result['Predicted_Output_Parts_Per_Hour']} parts/hour")
-        else:
-            st.error(f"❌ Error: {response.status_code} - {response.json()['detail']}")
-    except Exception as e:
-        st.error(f"🚨 Could not connect to API: {e}")
+   
