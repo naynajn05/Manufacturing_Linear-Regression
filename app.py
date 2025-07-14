@@ -113,5 +113,5 @@ try:
             st.success(f"✅ Predicted Output: {result['Predicted_Output_Parts_Per_Hour']} parts/hour")
         else:
             st.error(f"❌ Error: {response.status_code} - {response.json()['detail']}")
-    except Exception as e:
+except Exception as e:
         st.error(f"🚨 Could not connect to API: {e}")
