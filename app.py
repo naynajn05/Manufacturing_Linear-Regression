@@ -1,5 +1,4 @@
 import streamlit as st
-import requests
 import pickle
 import json
 import numpy as np
@@ -107,4 +106,12 @@ if submitted:
         
     }
  
-   
+   try:
+       
+        if response.status_code == 200:
+            result = response.json()
+            st.success(f"✅ Predicted Output: {result['Predicted_Output_Parts_Per_Hour']} parts/hour")
+        else:
+            st.error(f"❌ Error: {response.status_code} - {response.json()['detail']}")
+    except Exception as e:
+        st.error(f"🚨 Could not connect to API: {e}")
