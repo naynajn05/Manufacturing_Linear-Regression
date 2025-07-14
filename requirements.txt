@@ -5,3 +5,8 @@ scikit-learn==1.6.1
 joblib
 jinja2
 python-multipart
+streamlit
+scikit-learn
+pandas
+numpy
+requests
